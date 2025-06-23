@@ -14,12 +14,6 @@ st.set_page_config(
 
 st.markdown("""
     <style>
-    /* Style radio button selection (green bubble) */
-    .stRadio [role="radiogroup"] > label[data-baseweb="radio"] > div:first-child {
-        background-color: #28a745 !important;  /* green */
-        border-color: #28a745 !important;
-    }
-
     /* Style Predict button */
     .stButton > button {
         background-color: #1f77b4;  /* blue */
