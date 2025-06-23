@@ -7,7 +7,7 @@ model = joblib.load('model.pkl')
 
 # Set page configuration
 st.set_page_config(
-    page_title="Smart Home Efficiency Predictor",
+    page_title="🏠 Smart Home Efficiency Predictor",
     layout="centered",
     initial_sidebar_state="auto"
 )
