@@ -14,24 +14,25 @@ st.set_page_config(
 
 st.markdown("""
     <style>
-    /* Make radio button selection green */
+    /* Style radio button selection (green bubble) */
     .stRadio [role="radiogroup"] > label[data-baseweb="radio"] > div:first-child {
         background-color: #28a745 !important;  /* green */
         border-color: #28a745 !important;
     }
 
-    /* Make Predict button blue with hover effect */
+    /* Style Predict button */
     .stButton > button {
-        background-color: #1f77b4;  /* normal blue */
-        color: white;
+        background-color: #1f77b4;  /* blue */
+        color: white !important;
         border-radius: 5px;
         padding: 0.5rem 1rem;
         border: none;
     }
 
+    /* On hover: darker blue, keep white text */
     .stButton > button:hover {
-        background-color: #155a8a;  /* darker blue on hover */
-        color: white;
+        background-color: #155a8a;
+        color: white !important;
     }
     </style>
 """, unsafe_allow_html=True)
