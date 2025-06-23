@@ -7,56 +7,22 @@ model = joblib.load('model.pkl')
 
 # Set page configuration
 st.set_page_config(
-    page_title="🏠 Smart Home Efficiency Predictor",
+    page_title="Smart Home Efficiency Predictor",
     layout="centered",
     initial_sidebar_state="auto"
 )
 
-# Apply custom CSS for a futuristic look
-st.markdown("""
-    <style>
-        body {
-            background-color: #f4f8fb;
-            color: #1f1f2e;
-            font-family: 'Segoe UI', sans-serif;
-        }
-
-        .main {
-            background-color: #ffffff;
-            border-radius: 10px;
-            padding: 2rem;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        }
-
-        .stButton > button {
-            background-color: #0066cc;
-            color: white;
-            border-radius: 6px;
-            font-size: 16px;
-            padding: 0.5rem 1rem;
-        }
-
-        .stButton > button:hover {
-            background-color: #004c99;
-        }
-
-        .stRadio > div {
-            justify-content: center;
-        }
-    </style>
-""", unsafe_allow_html=True)
-
 # Title and instructions
-st.markdown("🏠 Smart Home Efficiency Predictor")
+st.title("Smart Home Efficiency Predictor")
 st.markdown(
-    "This intelligent tool predicts whether your smart home device is **efficient (1)** or **inefficient (0)** "
+    "This tool predicts whether your smart home device is **efficient (1)** or **inefficient (0)** "
     "based on your usage pattern and reported incidents."
 )
 
 st.markdown("---")
 
 # Input layout
-st.markdown("### 🔧 Device Usage Input")
+st.subheader("Device Usage Input")
 col1, col2, col3 = st.columns(3)
 
 with col1:
@@ -86,7 +52,7 @@ with col3:
         step=1.0
     )
 
-st.markdown("### ⚙️ Categorical Attributes")
+st.subheader("Categorical Attributes")
 col4, col5 = st.columns(2)
 
 with col4:
@@ -109,7 +75,7 @@ with col5:
 st.markdown("---")
 
 # Predict button
-if st.button("Predict Efficiency Class 🔍"):
+if st.button("Predict Efficiency Class"):
     input_data = np.array([[
         user_preferences,
         energy_consumption,
@@ -122,9 +88,9 @@ if st.button("Predict Efficiency Class 🔍"):
     confidence = model.predict_proba(input_data)[0][prediction] * 100
 
     if prediction == 1:
-        st.success("✅ Your smart device is predicted to be **Efficient**.")
+        st.success("Your smart device is predicted to be **Efficient**.")
     else:
-        st.error("⚠️ Your smart device is predicted to be **Inefficient**.")
+        st.error("Your smart device is predicted to be **Inefficient**.")
         
     st.markdown(f"**Confidence Level:** `{confidence:.2f}%`")
     st.info("This prediction is based on your device's reported characteristics and usage behavior.")
