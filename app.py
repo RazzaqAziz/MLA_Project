@@ -12,6 +12,30 @@ st.set_page_config(
     initial_sidebar_state="auto"
 )
 
+st.markdown("""
+    <style>
+    /* Make radio button selection green */
+    .stRadio [role="radiogroup"] > label[data-baseweb="radio"] > div:first-child {
+        background-color: #28a745 !important;  /* green */
+        border-color: #28a745 !important;
+    }
+
+    /* Make Predict button blue with hover effect */
+    .stButton > button {
+        background-color: #1f77b4;  /* normal blue */
+        color: white;
+        border-radius: 5px;
+        padding: 0.5rem 1rem;
+        border: none;
+    }
+
+    .stButton > button:hover {
+        background-color: #155a8a;  /* darker blue on hover */
+        color: white;
+    }
+    </style>
+""", unsafe_allow_html=True)
+
 # Title and instructions
 st.title("Smart Home Efficiency Predictor")
 st.markdown(
