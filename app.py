@@ -117,5 +117,16 @@ if st.button("Predict Efficiency Class"):
     else:
         st.error("Your smart device is predicted to be **Inefficient**.")
         
-    st.markdown(f"**Confidence Level:** `{confidence:.2f}%`")
-    st.info("This prediction is based on your device's reported characteristics and usage behavior.")
+     # Custom info box in light gray
+    st.markdown(f"""
+        <div style='
+            background-color: #f2f2f2;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 5px solid #808080;
+            font-size: 16px;
+        '>
+            <strong>Confidence Level:</strong> {confidence:.2f}%<br>
+            This prediction is based on your device's reported characteristics and usage behavior.
+        </div>
+    """, unsafe_allow_html=True)
