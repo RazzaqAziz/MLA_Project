@@ -45,7 +45,11 @@ if st.button("🔍 Predict Efficiency Class"):
             user_preferences,
             malfunction_incidents,
             device_age,
-            *device_encoding
+            device_encoding[0],       # DeviceType_Camera
+            device_encoding[1],       # DeviceType_Lights
+            device_encoding[2],       # DeviceType_Security System
+            device_encoding[3],       # DeviceType_Smart Speaker
+            device_encoding[4]        # DeviceType_Thermostat
         ]
     ])
 
