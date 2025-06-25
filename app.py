@@ -34,7 +34,7 @@ st.markdown("""
 # Title and instructions
 st.title("Smart Home Efficiency Predictor")
 st.markdown(
-    "This tool predicts whether your smart home device is **efficient (1)** or **inefficient (0)** "
+    "This tool predicts whether your smart home device is **efficient** or **inefficient** "
     "based on your usage pattern and reported incidents."
 )
 
